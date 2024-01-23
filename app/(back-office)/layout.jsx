@@ -1,3 +1,4 @@
+import Header from '@/components/dashboard/Header'
 import React from 'react'
 
 const layout = ({children}) => {
@@ -7,6 +8,7 @@ const layout = ({children}) => {
             Sidebar
         </div>
         <main className='w-full bg-slate-100 min-h-screen '>
+            <Header />
             {children}
         </main>
     </div>
