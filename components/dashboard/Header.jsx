@@ -5,7 +5,7 @@ import {
   LayoutGrid,
   Plus,
   Settings,
-  User2,
+  
   Users,
 } from "lucide-react";
 import React from "react";

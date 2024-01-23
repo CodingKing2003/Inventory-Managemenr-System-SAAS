@@ -11,10 +11,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import SubscriptionCard from "./SubscriptionCard";
 
 const Sidebar = () => {
   return (
-    <div className="w-60 min-h-screen bg-slate-800 text-slate-50 justify-between ">
+    <div className="w-60 min-h-screen bg-slate-800 text-slate-50 fixed ">
       <div className="flex flex-col">
         <Link
           href="#"
@@ -60,10 +61,12 @@ const Sidebar = () => {
         </Link>
       </nav>
 
-      <div className="flex flex-col">
-        <div className="flex space-x-2 items-center bg-slate-950 py-3 px-2">
+      <SubscriptionCard />
+
+      <div className="flex flex-col ">
+        <button className="flex space-x-2 justify-center items-center bg-slate-950 py-3 px-2">
           <ChevronLeft />
-        </div>
+        </button>
       </div>
     </div>
   );
