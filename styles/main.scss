@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header-bg{
+    background-image: url('https://res.cloudinary.com/dkqwol1ur/image/upload/v1706016907/header-bg_yx7fmo.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
