@@ -1,8 +1,12 @@
+import FixedHeader from '@/components/dashboard/FixedHeader'
 import React from 'react'
 
 const Inventory = () => {
   return (
-    <div>Inventory</div>
+    <div>
+      <FixedHeader />
+      Inventory
+      </div>
   )
 }
 

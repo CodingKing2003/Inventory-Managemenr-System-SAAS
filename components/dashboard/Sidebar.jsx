@@ -5,6 +5,7 @@ import {
   ChevronLeft,
   Files,
   Home,
+  PlusCircle,
   ShoppingBag,
   ShoppingBasket,
   ShoppingCart,
@@ -12,6 +13,11 @@ import {
 import Link from "next/link";
 import React from "react";
 import SubscriptionCard from "./SubscriptionCard";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 const Sidebar = () => {
   return (
@@ -26,10 +32,38 @@ const Sidebar = () => {
         </Link>
       </div>
       <nav className="flex flex-col gap-3 px-3 py-6 ">
-        <Link href="/" className="flex items-center space-x-2 bg-blue-600 text-slate-50 p-2 rounded-md">
+        <Link
+          href="/"
+          className="flex items-center space-x-2 bg-blue-600 text-slate-50 p-2 rounded-md"
+        >
           <Home className="w-4 h-4" />
           <span>Home</span>
         </Link>
+
+        <Collapsible>
+          <CollapsibleTrigger className="flex items-center space-x-2 p-2">
+            <BaggageClaim className="w-4 h-4" />
+            <span>Inventory</span>
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+          <Link className="flex items-center justify-between pl-8 pr-4 hover:bg-slate-900 transition-all duration-300 py-2.5 rounded-md space-x-3" href="#">
+              <span className="text-sm">Items</span>
+              <PlusCircle className="w-5 h-5" />
+
+            </Link>
+            <Link className="flex items-center justify-between pl-8 pr-4 hover:bg-slate-900 transition-all duration-300 py-2.5 rounded-md space-x-3" href="#">
+              <span className="text-sm">Item Groups</span>
+              <PlusCircle className="w-5 h-5" />
+
+            </Link>
+            <Link className="flex items-center justify-between pl-8 pr-4 hover:bg-slate-900 transition-all duration-300 py-2.5 rounded-md space-x-3" href="#">
+              <span className="text-sm">Inventory Adjustments</span>
+              <PlusCircle className="w-5 h-5" />
+
+            </Link>
+          </CollapsibleContent>
+        </Collapsible>
+
         <button className="flex items-center space-x-2 p-2">
           <BaggageClaim className="w-4 h-4" />
           <span>Inventory</span>
