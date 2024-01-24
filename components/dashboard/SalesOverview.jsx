@@ -1,6 +1,8 @@
 import { Check, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import SalesActivityCard from "./SalesActivityCard";
+import InventorySumaryCard from "./InventorySumaryCard";
 
 const SalesOverview = () => {
   const salesActivity = [
@@ -54,14 +56,7 @@ const SalesOverview = () => {
             {
                 salesActivity.map((item,i)=>{
                     return(
-                        <Link href={item.href} key={i} className="shadow rounded-lg border border-slate-200 transition-all duration-300 hover:border-blue-400 bg-white px-3 py-4 cursor-pointer flex items-center flex-col gap-3">
-                        <h4 className={`${item.color} font-semibold text-2xl`}>{item.number}</h4>
-                        <small className="text-slate-500">{item.unit}</small>
-                        <div className="flex items-center space-x-2 text-slate-500 ">
-                          <CheckCircle2 className="w-4 h-4" />
-                          <span className="uppercase text-xs">{item.title}</span>
-                        </div>
-                      </Link>
+                        <SalesActivityCard item={item} key={i} />
 
                     )
                 })
@@ -75,10 +70,7 @@ const SalesOverview = () => {
       {
         inventorySummary.map((item,i)=>{
             return(
-                <div key={i} className="shadow mb-4 rounded-lg border border-slate-200 transition-all duration-300 hover:border-blue-400 bg-white px-4 py-2 justify-between cursor-pointer flex items-center  gap-3">
-                <h2 className="uppercase  text-slate-500">{item.title}</h2>
-                <h4 className=" text-2xl">{item.number}</h4>
-              </div>
+               <InventorySumaryCard item={item} key={i} />
             )
         })
       }
