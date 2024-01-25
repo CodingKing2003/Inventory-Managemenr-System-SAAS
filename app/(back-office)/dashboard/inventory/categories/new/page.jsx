@@ -18,9 +18,28 @@ const NewCategories = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
-    reset();
+    setLoading(true);
+    const baseurl = "http://localhost:3000";
+    try {
+      const response = await fetch(`${baseurl}/api/categories`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        console.log(response);
+        setLoading(false);
+        reset();
+      }
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
   };
   return (
     <div>
@@ -37,7 +56,13 @@ const NewCategories = () => {
               errors={errors}
             />
 
-            <TextAreaInput name="Description" label="Category Description" type="text" register={register} errors={errors} />
+            <TextAreaInput
+              name="description"
+              label="Category Description"
+              type="text"
+              register={register}
+              errors={errors}
+            />
           </div>
           <SubmitButton loading={loading} title={"Category"} />
         </form>
