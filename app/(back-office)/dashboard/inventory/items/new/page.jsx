@@ -56,6 +56,21 @@ const NewItems = () => {
       value: "vdfgvfg67tu",
     },
   ];
+
+  const suppliers = [
+    {
+      label: "Supplier A",
+      value: "df578htyj",
+    },
+    {
+      label: "Supplier B",
+      value: "vdfgvfg67tu",
+    },
+    {
+      label: "Supplier C",
+      value: "vdfgvfg67tu",
+    },
+  ];
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -132,7 +147,7 @@ const NewItems = () => {
             <TextInput
               name="qty"
               label="Item Quantity"
-              type="text"
+              type="number"
               register={register}
               errors={errors}
               className="w-full"
@@ -172,6 +187,14 @@ const NewItems = () => {
               className="w-full"
             />
 
+            <SelectInput
+              register={register}
+              className="w-full"
+              name="supplierId"
+              label="Select Item Supplier "
+              options={suppliers}
+            />
+
             <TextInput
               name="reOrderPoint"
               label="Re-Order Point"
@@ -199,7 +222,7 @@ const NewItems = () => {
             />
 
             <TextInput
-              name="weight"
+              name="dimensions"
               label="Item Dimensions in cm (20 x 30 x 100)"
               register={register}
               errors={errors}
