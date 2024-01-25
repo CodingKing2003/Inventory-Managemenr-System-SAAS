@@ -1,4 +1,5 @@
 "use client";
+import SelectInput from "@/components/FormInputs/SelectInput";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import TextAreaInput from "@/components/FormInputs/TextAreaInput";
 import TextInput from "@/components/FormInputs/TextInput";
@@ -9,6 +10,17 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const NewWarehouse = () => {
+
+  const selectOptions=[
+    {
+      label:"Main",
+      value:"main",
+    },
+    {
+      label:"Branch",
+      value:"branch",
+    },
+  ]
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -47,6 +59,7 @@ const NewWarehouse = () => {
       <div className="w-full max-w-3xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3">
         <form onSubmit={handleSubmit(onSubmit)} className="">
           <div className="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6">
+           <SelectInput register={register} className="w-full" name="type" label="Select Warehouse Type" options={selectOptions} />
             <TextInput
               name="title"
               label="Warehouse Title"
@@ -64,7 +77,7 @@ const NewWarehouse = () => {
               register={register}
               required
               errors={errors}
-              className="w-full"
+              
             />
 
             <TextAreaInput
