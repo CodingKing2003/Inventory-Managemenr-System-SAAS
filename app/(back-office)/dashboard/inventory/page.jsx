@@ -2,7 +2,7 @@
 'use client';
 import FixedHeader from "@/components/dashboard/FixedHeader";
 import OptionCard from "@/components/dashboard/OptionCard";
-import { Boxes, Component, Plus, ScrollText, Shirt } from "lucide-react";
+import { Boxes, Component, Plus, ScrollText, Shirt, Warehouse } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -39,7 +39,7 @@ const Inventory = () => {
       link:"/dashboard/inventory/warehouse/new",
       linkTitle:"New Warehouse",
       enabled:true,
-      icon:ScrollText
+      icon:Warehouse
     },
     {
       title:"Units",

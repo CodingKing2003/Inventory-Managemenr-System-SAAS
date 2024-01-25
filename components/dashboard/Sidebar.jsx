@@ -1,3 +1,4 @@
+"use client";
 import {
   BaggageClaim,
   BarChart4,
@@ -19,6 +20,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { useRouter } from "next/navigation";
 
 const Sidebar = () => {
   const salesLinks = [
@@ -88,30 +90,32 @@ const Sidebar = () => {
             <ChevronRight className="w-4 h-4" />
           </CollapsibleTrigger>
           <CollapsibleContent>
+
+          
             <Link
               className="flex items-center justify-between pl-8 pr-4 hover:bg-slate-900 transition-all duration-300 py-2.5 rounded-md space-x-3"
-              href="/dashboard/inventory/"
+              href="/dashboard/inventory"
             >
               <span className="text-sm">Items</span>
-              <PlusCircle className="w-5 h-5" />
+              <PlusCircle  className="w-5 h-5" />
             </Link>
             <Link
               className="flex items-center justify-between pl-8 pr-4 hover:bg-slate-900 transition-all duration-300 py-2.5 rounded-md space-x-3"
-              href="/dashboard/inventory/categories/new"
+              href="/dashboard/inventory"
             >
               <span className="text-sm">Categories</span>
               <PlusCircle className="w-5 h-5" />
             </Link>
             <Link
               className="flex items-center justify-between pl-8 pr-4 hover:bg-slate-900 transition-all duration-300 py-2.5 rounded-md space-x-3"
-              href="/dashboard/inventory/brands/new"
+              href="/dashboard/inventory"
             >
               <span className="text-sm">Brands</span>
               <PlusCircle className="w-5 h-5" />
             </Link>
             <Link
               className="flex items-center justify-between pl-8 pr-4 hover:bg-slate-900 transition-all duration-300 py-2.5 rounded-md space-x-3"
-              href="/dashboard/inventory/units/new"
+              href="/dashboard/inventory"
             >
               <span className="text-sm">Units</span>
               <PlusCircle className="w-5 h-5" />
@@ -119,7 +123,7 @@ const Sidebar = () => {
 
             <Link
               className="flex items-center justify-between pl-8 pr-4 hover:bg-slate-900 transition-all duration-300 py-2.5 rounded-md space-x-3"
-              href="/dashboard/inventory/warehouse/new"
+              href="/dashboard/inventory"
             >
               <span className="text-sm">Warehouse</span>
               <PlusCircle className="w-5 h-5" />
@@ -127,10 +131,13 @@ const Sidebar = () => {
 
             <Link
               className="flex items-center justify-between pl-8 pr-4 hover:bg-slate-900 transition-all duration-300 py-2.5 rounded-md space-x-3"
-              href="/dashboard/inventory/warehouse/new"
+              href="/dashboard/inventory"
             >
               <span className="text-sm">Inventory Adjustments</span>
-              <PlusCircle className="w-5 h-5" />
+              <PlusCircle
+                href="/dashboard/inventory/items/new"
+                className="w-5 h-5"
+              />
             </Link>
           </CollapsibleContent>
         </Collapsible>
