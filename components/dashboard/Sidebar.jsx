@@ -90,7 +90,7 @@ const Sidebar = () => {
           <CollapsibleContent>
             <Link
               className="flex items-center justify-between pl-8 pr-4 hover:bg-slate-900 transition-all duration-300 py-2.5 rounded-md space-x-3"
-              href="/dashboard/inventory/items/new"
+              href="/dashboard/inventory/"
             >
               <span className="text-sm">Items</span>
               <PlusCircle className="w-5 h-5" />

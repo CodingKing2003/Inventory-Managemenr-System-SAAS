@@ -43,7 +43,7 @@ const NewCategories = () => {
   };
   return (
     <div>
-      <FormHeader title="New Category" href="#" />
+      <FormHeader title="New Category" href="/dashboard/inventory/" />
       <div className="w-full max-w-3xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3">
         <form onSubmit={handleSubmit(onSubmit)} className="">
           <div className="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6">
